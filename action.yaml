@@ -7,7 +7,7 @@ on:
     # Define your own schedule after "cron: "
     # Add a comment to the end of the line to read it in plain language 🕓
     # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
-    - cron: 30 17 * * FRI # Every Friday at 5:30pm UTC / 9:30am PT
+    - cron: 30 17 * * FRI # Every Friday at 17:30 UTC (5:30pm UTC / 9:30am PT)
 
 jobs:
   comment:
@@ -18,16 +18,16 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.createComment({
-              issue_number: 420, # replace with the number for the specific issue you want to update
+              issue_number: 420, # replace with the number of the specific issue the action will comment on
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `# Replace me!
+              body: `# Replace me with your own content!
               
-              Use multi-line **markdown** here to create your own templated issue comment.
+              Use multiple lines of **Markdown** here to create your own templated issue comment.
               
               | Even | Tables | 
               | --- | --- |
-              | Yes! | Tables! |
+              | If you | want to |
               
               Just keep the comment body between the backticks.
               `
