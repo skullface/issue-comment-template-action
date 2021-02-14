@@ -1,6 +1,9 @@
-# This action updates a specific issue with a new, templated comment on a schedule
-
-name: Add a new comment to a specific issue
+name: 'Add a new comment to a specific issue'
+description: 'This action updates a specific issue with a new, templated comment, on a schedule.'
+author: '@skullface'
+branding:
+  icon: 'calendar'
+  color: 'yellow'
 
 on:
   schedule:
